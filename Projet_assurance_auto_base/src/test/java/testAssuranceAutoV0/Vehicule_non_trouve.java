@@ -14,31 +14,35 @@ import static java.util.Arrays.asList;
 @RunWith(Parameterized.class)
 public class Vehicule_non_trouve {
 
+    private final int Vehicule_anneeMiseEnCirculation;
     private final String Vehicule_carburant;
     private final String Vehicule_marque;
     private final String Vehicule_modele;
 
-    public Vehicule_non_trouve(final String Vehicule_carburant, final String Vehicule_marque, final String Vehicule_modele) {
+    public Vehicule_non_trouve(final int Vehicule_anneeMiseEnCirculation, final String Vehicule_carburant, final String Vehicule_marque, final String Vehicule_modele) {
+        this.Vehicule_anneeMiseEnCirculation = Vehicule_anneeMiseEnCirculation;
         this.Vehicule_carburant = Vehicule_carburant;
         this.Vehicule_marque = Vehicule_marque;
         this.Vehicule_modele = Vehicule_modele;
     }
 
-    @Parameters(name = "{0}-{1}-{2}")
+    @Parameters(name = "{0}-{1}-{2}-{3}")
     public static Collection<Object[]> dataSets() {
         return asList(new Object[][]{
-            {"Petrol", "Citroën", "C3"}
+            {1972, "Petrol", "Citroën", "C3"}
         });
     }
 
     @Before
     public void setUp() {
-    	ouvrirNavigateur("https://demo-simulator.herokuapp.com/");
+        ouvrirNavigateur("https://demo-simulator.herokuapp.com/");
     }
 
 
     @Test
     public void execute() {
         saisirCaracteristiquesVehicule(Vehicule_marque, Vehicule_modele, Vehicule_carburant);
+        saisirAnneeMiseEnCirculation(Vehicule_anneeMiseEnCirculation);
+        verifierMessageErreur();
     }
 }

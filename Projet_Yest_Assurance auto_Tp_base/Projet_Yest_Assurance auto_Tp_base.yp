@@ -9,6 +9,7 @@
     <testElements xsi:type="yest:AutomationConfiguration" id="TFsmOv3m2FvQxqSXiNukhZuoLtfFwBEw" campaign="6APtXdjVskvdravSq5C0AziQ8hSjcqZm" name="PublicationJava Selenium" publisherId="com.smartesting.publishers.javaselenium.JavaSeleniumEditor">
       <parameters name="DictionaryFile" value="#project#/keyword_assuranceAuto.xlsx"/>
       <parameters name="DestinationPackageName" value="testAssuranceAutoV0"/>
+      <parameters name="destinationPath" value="C:/EPSI/I1/AT Automatisation Test/AT-Automatisation-Test-/Projet_assurance_auto_base/src/test/java"/>
       <operationScripts testOperation="NaAbCQLMI7sOeTAoQAdi4UB5cNB1q1hX">
         <after/>
         <body>
@@ -101,11 +102,25 @@
         </body>
         <before/>
       </operationScripts>
+      <operationScripts testOperation="WAdV1b0zlyCrT8nP2p6k7kgeFDEs20fF">
+        <after/>
+        <body>
+          <calls keywordId="choisirAssuranceAuTiers" keywordName="choisirAssuranceAuTiers" id="8CKPnerGEFFW4s9VA8R7OIAt6CmEVqZP"/>
+        </body>
+        <before/>
+      </operationScripts>
+      <operationScripts testOperation="QV6tHsEn2IXVwg0Dz82jg98qdHKYzzXf">
+        <after/>
+        <body>
+          <calls keywordId="verifierMessageErreur" keywordName="verifierMessageErreur" id="vVgEWzd9j2RIUVvf4gxgkQPEHVQ9svVU"/>
+        </body>
+        <before/>
+      </operationScripts>
       <globalBefore>
         <calls keywordId="ouvrirNavigateur" keywordName="ouvrirNavigateur" id="1wpe6SG6pRi5c2x6kxRTd9VfRcEyptf6">
           <arguments parameterName="site">
             <parameterValue>
-              <stepElements xsi:type="yest:StepText" content="https://demo-simulator.herokuapp.com/"/>
+              <stepElements xsi:type="yest:StepText" content="&quot;https://demo-simulator.herokuapp.com/&quot;"/>
             </parameterValue>
           </arguments>
         </calls>

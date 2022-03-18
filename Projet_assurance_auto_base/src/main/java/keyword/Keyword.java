@@ -35,27 +35,32 @@ public class Keyword {
         driver.quit();
     }
 
-    public static void saisirCaracteristiquesVehicule(Object marque, Object modele, Object carburant) {
+    public static void saisirCaracteristiquesVehicule(Object marque, Object modele, Object carburant) throws InterruptedException {
+    	wait(1);
     	driver.findElement(By.xpath(xpath_marque)).sendKeys((CharSequence[]) marque);
     	driver.findElement(By.xpath(xpath_modele)).sendKeys((CharSequence[]) modele);
-    	driver.findElement(By.xpath(xpath_carburant)).sendKeys((CharSequence[]) carburant);
-    	
+    	driver.findElement(By.xpath(xpath_carburant)).sendKeys((CharSequence[]) carburant);	
     }
     
-    public static void saisirAnneeMiseEnCirculation(Object annee) {
+    public static void saisirAnneeMiseEnCirculation(Object annee) throws InterruptedException {
+    	driver.findElement(By.xpath("/html/body/div/div/div[2]/div/div[1]/div[5]/div/input")).clear();
+    	wait(1);
     	driver.findElement(By.xpath("/html/body/div/div/div[2]/div/div[1]/div[5]/div/input")).sendKeys((CharSequence[]) annee);
     }
     
-    public static void saisirLesDonneesConducteur(Object datePermis, Object codePostal, Object nom) {
+    public static void saisirLesDonneesConducteur(Object datePermis, Object codePostal, Object nom) throws InterruptedException {
+    	driver.findElement(By.xpath(xpath_datepermis)).clear();
+    	driver.findElement(By.xpath(xpath_codepostal)).clear();
+    	driver.findElement(By.xpath(xpath_nom)).clear();
+    	wait(1);
     	driver.findElement(By.xpath(xpath_datepermis)).sendKeys((CharSequence[]) datePermis);
     	driver.findElement(By.xpath(xpath_codepostal)).sendKeys((CharSequence[]) codePostal);
     	driver.findElement(By.xpath(xpath_nom)).sendKeys((CharSequence[]) nom);
-    	
     }
     
-    public static void saisirBonusMalus(Object bonusOuMalus) {
+    public static void saisirBonusMalus(Object bonusOuMalus) throws InterruptedException {
+    	wait(1);
     	driver.findElement(By.xpath(xpath_bonusetmalus)).sendKeys((CharSequence[]) bonusOuMalus);
-    	
     }
     
     public static void choisirAssuranceAuTiers() {
@@ -63,12 +68,12 @@ public class Keyword {
     	new Select(selectElement);
     }
     
-    public static void choisirAssurenceTousRisques() {
+    public static void choisirAssuranceTousRisques() {
     	WebElement selectElement = driver.findElement(By.id("comprehensive"));
     	new Select(selectElement);
     }
     
-    public static void simulerEtVerifierTarif(String tarif) {
+    public static void simulerEtVerifierTarif(String tarif) throws InterruptedException {
     	saisirCaracteristiquesVehicule("Citroën", "Berlingo", "Petrol");
     	saisirAnneeMiseEnCirculation(2019);
     	saisirLesDonneesConducteur("01/01/2010", "33320", "John Doe");
@@ -77,11 +82,11 @@ public class Keyword {
     	clickOn(xpath_simuler);
     }
     
-    public static void verifierMessageErreur() {
-    	Thread.sleep(5000);
-		WebElement element = waitWebElement(carErrorField);
+    public static void verifierMessageErreur() throws InterruptedException {
+    	wait(1);
+		WebElement element = waitWebElement(null);
         if(element == null){
-            Assert.fail("Element non trouve :" + carErrorField);
+            Assert.fail("Element non trouve");
         }
         else {
             if(element.getText().equals("Vehicule non trouve")){
@@ -94,7 +99,7 @@ public class Keyword {
     }
     
     public static void wait (int temps) throws InterruptedException {
-        Thread.sleep(2000);
+        driver.manage().timeouts().implicitlyWait(temps, TimeUnit.SECONDS);
     }
     
     public static void checkMessage (String xpath, String text) {
