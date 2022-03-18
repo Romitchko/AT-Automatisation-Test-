@@ -10,6 +10,7 @@ public class ObjectRepository {
     public static String xpath_codepostal = "//*[@id=\"zipCode\"]";
     public static String xpath_nom = "//*[@id=\"name\"]";
     public static String xpath_bonusetmalus = "//*[@id=\"bonusMalus\"]";
+    public static String xpath_simuler = "//*[@id=\"simulateButton\"]";
 
     public static void construireObjectRepository(){ }
 

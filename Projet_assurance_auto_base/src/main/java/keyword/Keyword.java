@@ -59,16 +59,22 @@ public class Keyword {
     }
     
     public static void choisirAssuranceAuTiers() {
-    	clickOn("xPath");
+    	WebElement selectElement = driver.findElement(By.id("thirdParty"));
+    	new Select(selectElement);
     }
     
     public static void choisirAssurenceTousRisques() {
-    	WebElement selectElement = driver.findElement(By.id("AssuranceTousRisques"));
+    	WebElement selectElement = driver.findElement(By.id("comprehensive"));
     	new Select(selectElement);
     }
     
     public static void simulerEtVerifierTarif(String tarif) {
     	saisirCaracteristiquesVehicule("Citroën", "Berlingo", "Petrol");
+    	saisirAnneeMiseEnCirculation(2019);
+    	saisirLesDonneesConducteur("01/01/2010", "33320", "John Doe");
+    	saisirBonusMalus(10);
+    	choisirAssuranceAuTiers();
+    	clickOn(xpath_simuler);
     }
     
     public static void verifierMessageErreur() {
