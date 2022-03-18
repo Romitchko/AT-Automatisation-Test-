@@ -65,11 +65,10 @@ public class Keyword {
     public static void choisirAssurenceTousRisques() {
     	WebElement selectElement = driver.findElement(By.id("AssuranceTousRisques"));
     	new Select(selectElement);
-    	
     }
     
     public static void simulerEtVerifierTarif(String tarif) {
-    	
+    	saisirCaracteristiquesVehicule("Citroën", "Berlingo", "Petrol");
     }
     
     public static void verifierMessageErreur() {

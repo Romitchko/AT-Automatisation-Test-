@@ -33,7 +33,7 @@ public class Jeune_Paris_Bonus_Assurance_au_tiers_TARIF {
 
     @Before
     public void setUp() {
-        ouvrirNavigateur(https://demo-simulator.herokuapp.com/);
+        ouvrirNavigateur("https://demo-simulator.herokuapp.com/");
     }
 
 

@@ -33,7 +33,7 @@ public class Experimente_Paris_MALUS_Assurance_tous_risques_TARIF {
 
     @Before
     public void setUp() {
-        ouvrirNavigateur(https://demo-simulator.herokuapp.com/);
+        ouvrirNavigateur("https://demo-simulator.herokuapp.com/");
     }
 
 
