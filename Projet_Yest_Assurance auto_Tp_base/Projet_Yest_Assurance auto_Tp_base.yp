@@ -6,6 +6,43 @@
   <metadata key="ApplicationVersion" value="3.0.0"/>
   <subFolders name="Campagne test automatisés" id="FbmlnicUrYr9b97coDogWOO7zp8kfeeB">
     <testElements xsi:type="yest:TestCampaign" id="6APtXdjVskvdravSq5C0AziQ8hSjcqZm" name="Campagne à automatiser" testScenarios="BTsdBhYXuZCOx5ZFmvTRDv81TXpbfmmx yEshot2IpgI1o1IduhhFYr9Glu9zw44E Z7lR5khr68rEeL9yENKYzKE2wG4ShXKr YAjiXnjpOvYrOcf1HgDG6QOs2Xfc1uaX sb7Jpm7T1ZFt9y26358M0HTJxJYdgsI9" dataSetCollections="DWRxMQawS9FCuqeCFzXN0OhPifMdalTc"/>
+    <testElements xsi:type="yest:AutomationConfiguration" id="fGbq15I8eGwEl4qtFY2zvudFdovUMOYF" campaign="6APtXdjVskvdravSq5C0AziQ8hSjcqZm" name="PublicationJava Selenium" publisherId="com.smartesting.publishers.javaselenium.JavaSeleniumEditor">
+      <parameters name="DictionaryFile" value="#project#/keyword_assuranceAuto.xlsx"/>
+      <parameters name="DestinationPackageName" value="testAutomatisationV0"/>
+      <operationScripts testOperation="NaAbCQLMI7sOeTAoQAdi4UB5cNB1q1hX">
+        <after/>
+        <body>
+          <calls keywordId="saisirCaracteristiquesVehicule" keywordName="saisirCaracteristiquesVehicule" id="ZhR1utKaHzoW3wWTcacBcYKue06FHnUn">
+            <arguments parameterName="modele">
+              <parameterValue>
+                <stepElements xsi:type="yest:StepField" id="ngiq3WpRuit1yXnJF1MxRmitkTvNXtBy" data="1E2mWksod72K4TX0XkSgdEw0RhKlQ8W2"/>
+              </parameterValue>
+            </arguments>
+            <arguments parameterName="carburant">
+              <parameterValue>
+                <stepElements xsi:type="yest:StepField" id="HP9kVUFSIH8mdPLwSwhUft4my9ggsY0m" data="ezijXoYPah9R6wFaDQZO1SRUc85WvK4b"/>
+              </parameterValue>
+            </arguments>
+            <arguments parameterName="marque">
+              <parameterValue>
+                <stepElements xsi:type="yest:StepField" id="8kQfyqAuy340dxn3XFtEAkevo8MMzGZX" data="RC9a67qu6jM3xjcmm6S06gVQ7uoEFofW"/>
+              </parameterValue>
+            </arguments>
+          </calls>
+        </body>
+        <before/>
+      </operationScripts>
+      <globalBefore>
+        <calls keywordId="ouvrirNavigateur" keywordName="ouvrirNavigateur" id="9yNJa3HxdI65Wg2dXEIQGIZNAd8IMpBv">
+          <arguments parameterName="site">
+            <parameterValue>
+              <stepElements xsi:type="yest:StepText" content="https://demo-simulator.herokuapp.com/"/>
+            </parameterValue>
+          </arguments>
+        </calls>
+      </globalBefore>
+      <globalAfter/>
+    </testElements>
   </subFolders>
   <testElements xsi:type="yest:TestOperation" id="QV6tHsEn2IXVwg0Dz82jg98qdHKYzzXf">
     <highLevelStep>
