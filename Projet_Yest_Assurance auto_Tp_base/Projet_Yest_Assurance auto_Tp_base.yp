@@ -6,6 +6,112 @@
   <metadata key="ApplicationVersion" value="3.0.0"/>
   <subFolders name="Campagne test automatisés" id="FbmlnicUrYr9b97coDogWOO7zp8kfeeB">
     <testElements xsi:type="yest:TestCampaign" id="6APtXdjVskvdravSq5C0AziQ8hSjcqZm" name="Campagne à automatiser" testScenarios="BTsdBhYXuZCOx5ZFmvTRDv81TXpbfmmx yEshot2IpgI1o1IduhhFYr9Glu9zw44E Z7lR5khr68rEeL9yENKYzKE2wG4ShXKr YAjiXnjpOvYrOcf1HgDG6QOs2Xfc1uaX sb7Jpm7T1ZFt9y26358M0HTJxJYdgsI9" dataSetCollections="DWRxMQawS9FCuqeCFzXN0OhPifMdalTc"/>
+    <testElements xsi:type="yest:AutomationConfiguration" id="TFsmOv3m2FvQxqSXiNukhZuoLtfFwBEw" campaign="6APtXdjVskvdravSq5C0AziQ8hSjcqZm" name="PublicationJava Selenium" publisherId="com.smartesting.publishers.javaselenium.JavaSeleniumEditor">
+      <parameters name="DictionaryFile" value="#project#/keyword_assuranceAuto.xlsx"/>
+      <parameters name="DestinationPackageName" value="testAssuranceAutoV0"/>
+      <operationScripts testOperation="NaAbCQLMI7sOeTAoQAdi4UB5cNB1q1hX">
+        <after/>
+        <body>
+          <calls keywordId="saisirCaracteristiquesVehicule" keywordName="saisirCaracteristiquesVehicule" id="3lLAzyCJiX9ivXhNkh6gj7Rx0oYzuJab">
+            <arguments parameterName="modele">
+              <parameterValue>
+                <stepElements xsi:type="yest:StepField" id="3bJwCrRGmz5t7mNipJCBTOsd0g1jvhIQ" data="1E2mWksod72K4TX0XkSgdEw0RhKlQ8W2"/>
+              </parameterValue>
+            </arguments>
+            <arguments parameterName="carburant">
+              <parameterValue>
+                <stepElements xsi:type="yest:StepField" id="tzknr06zyOy3iRTgdZJpsocehqjvUYbP" data="ezijXoYPah9R6wFaDQZO1SRUc85WvK4b"/>
+              </parameterValue>
+            </arguments>
+            <arguments parameterName="marque">
+              <parameterValue>
+                <stepElements xsi:type="yest:StepField" id="kd0BA00X9IbA89QJtlT2QSUrOpUJVXkg" data="RC9a67qu6jM3xjcmm6S06gVQ7uoEFofW"/>
+              </parameterValue>
+            </arguments>
+          </calls>
+        </body>
+        <before/>
+      </operationScripts>
+      <operationScripts testOperation="pAnATlTv7QnnUX10PyitqUJ1lFL0X6FC">
+        <after/>
+        <body>
+          <calls keywordId="saisirAnneeMiseEnCirculation" keywordName="saisirAnneeMiseEnCirculation" id="JpDca4LVx5YZdG6jyQFBRzed1CSDm7up">
+            <arguments parameterName="année">
+              <parameterValue>
+                <stepElements xsi:type="yest:StepField" id="mGSs83Lti6ydQDG9ZfU8Kgj1xi3upl9y" data="d3LreoXz9hso09dLzRrdrsBZUbGbH6H2"/>
+              </parameterValue>
+            </arguments>
+          </calls>
+        </body>
+        <before/>
+      </operationScripts>
+      <operationScripts testOperation="KviABcL3ugKDmseNofkUUtmjrAiur8wY">
+        <after/>
+        <body>
+          <calls keywordId="saisirLesDonneesConducteur" keywordName="saisirLesDonneesConducteur" id="gJe1gtOboZQ0ljqmC70e4Cb2YWFMwVOm">
+            <arguments parameterName="codePostal">
+              <parameterValue>
+                <stepElements xsi:type="yest:StepField" id="nHDLUp8VrBNSRcpu3C70yGpPUEMaIlbe" data="goJk4Z2yaovmTrJPS6baDZpjzRjv9yvR"/>
+              </parameterValue>
+            </arguments>
+            <arguments parameterName="datePermis">
+              <parameterValue>
+                <stepElements xsi:type="yest:StepField" id="ETzQHpYXXsJ2Q4ApZcexgdW0SA94NWm6" data="tc8jQCQ3e3s3HeGlQPxcqjCLtjoVoMLl"/>
+              </parameterValue>
+            </arguments>
+            <arguments parameterName="nom">
+              <parameterValue>
+                <stepElements xsi:type="yest:StepField" id="ja0EE79NKN2Okdz0FYsmIQDMPBaxIFzQ" data="cdO9qL8Rr0wWFYkpt7OWVj9QVLZa1jfB"/>
+              </parameterValue>
+            </arguments>
+          </calls>
+        </body>
+        <before/>
+      </operationScripts>
+      <operationScripts testOperation="K9fmyCIMhIIvr2T0b2g4IpZuqdFKMvff">
+        <after/>
+        <body>
+          <calls keywordId="saisirBonusMalus" keywordName="saisirBonusMalus" id="0yvNpk4lkqKth6UED3j3wAjAqanKOxyq">
+            <arguments parameterName="bonusOuMalus">
+              <parameterValue>
+                <stepElements xsi:type="yest:StepField" id="L1L8hv0wN2m62dWXRed2kKM7ncZOdasI" data="RmooEYGV4q3HgZUc5A4CgvadVfcKy02u"/>
+              </parameterValue>
+            </arguments>
+          </calls>
+        </body>
+        <before/>
+      </operationScripts>
+      <operationScripts testOperation="NbwdgGq2SrWH0j76z0DeH6FCPD9pAyD7">
+        <after/>
+        <body>
+          <calls keywordId="choisirAssuranceTousRisques" keywordName="choisirAssuranceTousRisques" id="M3VE7K67krBqvHy0bxRL2h4HbohcPzhL"/>
+        </body>
+        <before/>
+      </operationScripts>
+      <operationScripts testOperation="i1SG4icg7E20gdF8047IfV2H6g6Ug6EA">
+        <after/>
+        <body>
+          <calls keywordId="simulerEtVerifierTarif" keywordName="simulerEtVerifierTarif" id="LU4Gx28iMOD9kW2MwoKkCNipX6ywWcJG">
+            <arguments parameterName="tarif">
+              <parameterValue>
+                <stepElements xsi:type="yest:StepField" id="XUdASSdJfEpAB7MArZD7g9RBEw5iJOYK" data="iQD89nMGJw5GS4l2qED6lyycs2sUKqPW"/>
+              </parameterValue>
+            </arguments>
+          </calls>
+        </body>
+        <before/>
+      </operationScripts>
+      <globalBefore>
+        <calls keywordId="ouvrirNavigateur" keywordName="ouvrirNavigateur" id="1wpe6SG6pRi5c2x6kxRTd9VfRcEyptf6">
+          <arguments parameterName="site">
+            <parameterValue>
+              <stepElements xsi:type="yest:StepText" content="https://demo-simulator.herokuapp.com/"/>
+            </parameterValue>
+          </arguments>
+        </calls>
+      </globalBefore>
+      <globalAfter/>
+    </testElements>
   </subFolders>
   <testElements xsi:type="yest:TestOperation" id="QV6tHsEn2IXVwg0Dz82jg98qdHKYzzXf">
     <highLevelStep>
